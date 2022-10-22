@@ -5,10 +5,7 @@ export function getCalenderData(action: string, actionCount: number) {
   let currentDate = new Date();
   if (action === "next") {
     // go to the next week
-    const dateIncrement = currentDate.getDate() + actionCount;
-    // prevent the date from exceeding the month
-    // if (dateIncrement > 31) {
-    currentDate.setDate(dateIncrement);
+    currentDate.setDate(currentDate.getDate() + actionCount);
   } else if (action === "prev") {
     currentDate.setDate(currentDate.getDate() - actionCount);
   } else {

@@ -7,7 +7,7 @@ export interface Props {
   today: string;
   setSelectedClass: (i: number) => void;
 }
-const WeekView = ({
+const WeekView: React.FunctionComponent<Props> = ({
   daysOfTheWeek,
   weekDays,
   selectedDateIndex,
@@ -21,7 +21,7 @@ const WeekView = ({
           <div
             className={`calender-header-day ${
               selectedDateIndex === index && "selected-day"
-            } ${weekDays[index].isToday && "today"}`}
+            } ${weekDays[index].isToday && today === day && "today"}`}
             key={index}
             onClick={() => setSelectedClass(index)}
           >
